@@ -2,7 +2,10 @@
 
 ## This repository is an example of Image Processing Bootcamp.
 
-## Personal note: To be honest this project was my first image processing project. Feel free to open Issues and Pull Request to improve project. Special thanks for Global AI Hub to for organizing this bootcamp. I learned a lot thanks to this project. From now, I will tell you about my project. As you see there are more than one .ipynb files in the repository. I uploaded them to see accuracy differences.
+## Personal Note:
+To be honest, this project was my first image processing project. Feel free to open issues and pull requests to help improve it. Special thanks to Global AI Hub for organizing this bootcamp—I learned a lot through this project.
+
+Now, let me tell you more about my work. As you can see, there are multiple .ipynb files in the repository. I uploaded them to compare the accuracy differences.
 
 ### Libraries
 
@@ -54,18 +57,36 @@
 ---
 
 ## From now on I will only tell differences between other files and why i keep them.
+First, I started my project with the bootcamp.ipynb file. I initially tried using Google Colab, but it took over 50 minutes just to train the model. After that, I decided to work on my own computer. As you can see, training only takes 82 seconds to finish now. It felt like a fairytale until my VRAM and RAM were completely filled. I searched for solutions, but none of them worked for me, including using the gc.collect() function.
 
-First of all I started project with `bootcamp.ipynb` file. I tried Google Colab but it took over 50 minutes just to train the model. After that I decied working with my computer. As you see trainings are only take 82 seconds to finish. It was like fairytale until my vram and ram are completely fill. I searched for a solution but solutions are not worked for me. For example `gc.collect()` function.
+The bootcamp.ipynb file served as my base file, and in that file, the results were as follows:
 
-So `bootcamp.ipynb` file way my base file. In that file results are like that: Training and test accuracy for; Processed images = **78%**, test accuracy for; Manipulated images = **9%**, test accuracy for White balance (color constancy) applied images = **10%**
+    Training and test accuracy for processed images: 78%
+    Test accuracy for manipulated images: 9%
+    Test accuracy for white balance (color constancy) applied images: 10%
 
-Then I changed parameters in the model. In base file has `layers.Dense(128, activation='relu')` parameter for model. I increased to `layers.Dense(256, activation='relu')` Training and test accuracy for; Processed images = **84%**, test accuracy for; Manipulated images = **11%**, test accuracy for White balance (color constancy) applied images = **9%**
+Next, I changed the parameters in the model. The base file had layers.Dense(128, activation='relu') as a parameter for the model. I increased it to layers.Dense(256, activation='relu'). The results were:
 
-After that again I increased to `layers.Dense(512, activation='relu')` but this time Training and test accuracy for; Processed images = **75%**, test accuracy for; Manipulated images = **12%**, test accuracy for White balance (color constancy) applied images = **10%**
+    Training and test accuracy for processed images: 84%
+    Test accuracy for manipulated images: 11%
+    Test accuracy for white balance (color constancy) applied images: 9%
 
-So optimum value is `layers.Dense(256, activation='relu')` for this model. Then I thought, what happens if i train my model with processed and manipulated images.
-This time my results are like Training and test accuracy for; Processed images = **78%**, test accuracy for; Manipulated images = **89%**, test accuracy for White balance (color constancy) applied images = **11%**
+After that, I increased it further to layers.Dense(512, activation='relu'), but this time, the results were:
 
-That wasn't enough for me, and I didn't want to overfit my model. So I started browsing and asking ai to how improve color constancy, then I found that I should use data augmentation methods. With `ImageDataGenerator` function from `tensorflow.keras` library, I added properties to the dataset. Finally results are Training and test accuracy for; Processed images = **78%**, test accuracy for; Manipulated images = **89%**, test accuracy for White balance (color constancy) applied images = **34%**
+    Training and test accuracy for processed images: 75%
+    Test accuracy for manipulated images: 12%
+    Test accuracy for white balance (color constancy) applied images: 10%
 
-Still Color constancy test accuracy is not enough but I don't have time to increase that accuracy before the deadline. 
+It became clear that the optimum value for this model was layers.Dense(256, activation='relu'). Then I thought, What happens if I train my model with both processed and manipulated images? This time, the results were:
+
+    Training and test accuracy for processed images: 78%
+    Test accuracy for manipulated images: 89%
+    Test accuracy for white balance (color constancy) applied images: 11%
+
+That still wasn’t enough for me, and I didn’t want to overfit my model. So, I started browsing and asking AI about how to improve color constancy. I found that I should use data augmentation methods. Using the ImageDataGenerator function from the tensorflow.keras library, I added properties to the dataset. Finally, the results were:
+
+    Training and test accuracy for processed images: 78%
+    Test accuracy for manipulated images: 89%
+    Test accuracy for white balance (color constancy) applied images: 34%
+
+Still, the color constancy test accuracy is not sufficient, but I don’t have enough time to improve it further before the deadline.
