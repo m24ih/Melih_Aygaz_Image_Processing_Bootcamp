@@ -34,22 +34,22 @@
 - 6th Cell: Created a save function that i manipulated images above the cell.
 - 7th Cell: I used `load_images` function to loading processed and manipulated images. Then I concatenated them with using `numpy` library. So i can train my model with combined datasets.
 - 8th Cell: I split my train and test data. After that I create my model with different layers. Then I compiled my model.
-  ![alt text](image-4.png)
+- ![alt text](image-4.png)
 - 9th Cell: At this cell I use `ImageDataGenerator` function from `tensorflow.keras` library. With that function I made augmentation. Then I applied to the train dataset.
 - 10th Cell: Now, finally I can train my model and see accuracy points. Which is 78%
-  ![alt text](image-3.png)
+- ![alt text](image-3.png)
 - 11th Cell: I created only manipulated dataset for testing my model.
 - 12th Cell: With manipulated dataset, my model's accuracy is 89% which is great. But this wasn't always like that high.
-  ![alt text](image-2.png)
+- ![alt text](image-2.png)
 - 13th Cell: I made an operation and then I see how many predictions are correct.
-  ![alt text](image-1.png)
+- ![alt text](image-1.png)
 - 14th Cell: I want to see which images are incorrect predicted. Randomly chosen 5 picture is shown at this cell's output which their real and predicted animal classes.
 - 15th Cell: Same thing but with correct predicts.
 - 16th Cell: I created an color constancy algorithm with `get_wb_images` function. Which uses `numpy` library to make array operations like mean, sum, and normalize.
 - 17th Cell: Applied color constancy algorithm to the manipulated images, and saved them.
 - 18th Cell: Loading color constanced images
 - 19th Cell: Normalize and test accuracy point for color constanced images which is 34%
-  ![alt text](image.png)
+- ![alt text](image.png)
 
 ---
 
